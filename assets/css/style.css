@@ -280,3 +280,36 @@ header .lead {
     font-size: 0.9rem;
     margin-bottom: 0;
 }
+/*
+========================================
+ 13. ESTILOS DEL FOOTER (ACTUALIZADO)
+========================================
+*/
+footer .social-links a {
+    color: white;
+    
+    /* * AJUSTE DE ESPACIADO: 
+     * Cambiamos de 10px a 20px (o el valor que prefieras) 
+     */
+    margin: 0 20px; 
+    
+    /* * AJUSTE DE TAMAÑO: 
+     * Cambiamos de 1.5rem a 2.2rem (o el valor que prefieras) 
+     */
+    font-size: 2.2rem; 
+    
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--color-amarillo-sol); 
+}
+.service-card .icon-service {
+    /* * AJUSTE DE TAMAÑO: 
+     * Cámbialo de 3rem a 4.5rem (o al tamaño que prefieras) 
+     */
+    font-size: 4.5rem; 
+    color: var(--color-verde-principal);
+    margin-bottom: 1.5rem;
+}
