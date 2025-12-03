@@ -2,72 +2,168 @@ document.addEventListener("DOMContentLoaded", () => {
     const departamentoInfo = {
         "San Salvador": {
             actividades: [
-                "Visitar el Centro Histórico (Palacio Nacional, Catedral, Teatro Nacional).",
+                "Visitar el Centro Histórico (Palacio Nacional, Catedral, BINAES).",
                 "Subir al Volcán de San Salvador (El Boquerón).",
-                "Explorar el Museo de Antropología (MUNA).",
-                "Disfrutar de la vida nocturna en la Zona Rosa."
+                "Explorar el Lago de Ilopango (Vía Vela).",
+                "Disfrutar de la vista en la Puerta del Diablo."
             ],
-            guias: [ 
-                { nombre: "Carlos Henríquez", especialidad: "Tours Históricos y Centro de la Ciudad", telefono: "7811-2030" },
-                { nombre: "Beatriz Ayala", especialidad: "Tour de Volcanes y Naturaleza (El Boquerón)", telefono: "7650-4050" }
+            guias: [
+                { nombre: "Carlos Henríquez", especialidad: "Centro Histórico", telefono: "7811-2030" },
+                { nombre: "Beatriz Ayala", especialidad: "Volcanes y Naturaleza", telefono: "7650-4050" }
             ]
         },
         "La Libertad": {
             actividades: [
-                "Tomar clases de surf en El Tunco o El Sunzal.",
-                "Disfrutar de mariscos frescos en el Malecón del Puerto de La Libertad.",
-                "Visitar el parque de diversiones Sunset Park.",
-                "Explorar las cuevas de Tamanique."
+                "Surf y vida nocturna en El Tunco o El Zonte.",
+                "Visitar Sunset Park y el Muelle de La Libertad.",
+                "Caminata a las Cascadas de Tamanique.",
+                "Aventura en el Parque Walter Thilo Deininger."
             ],
             guias: [
-                { nombre: "Miguel Hernández", especialidad: "Surf y Deportes Acuáticos", telefono: "7456-7890" },
-                { nombre: "José Campos", especialidad: "Tours de Playa", telefono: "7578-9012" }
+                { nombre: "Miguel Hernández", especialidad: "Surf City Tours", telefono: "7456-7890" },
+                { nombre: "José Campos", especialidad: "Rutas de Playa", telefono: "7578-9012" }
             ]
         },
         "Santa Ana": {
             actividades: [
-                "Hacer senderismo en el Volcán de Santa Ana (Ilamatepec) y ver la laguna.",
-                "Recorrer el centro histórico y visitar el Teatro de Santa Ana.",
-                "Nadar y relajarse en el Lago de Coatepeque.",
-                "Visitar el sitio arqueológico Joya de Cerén (cercano)."
+                "Senderismo al cráter del Volcán Ilamatepec.",
+                "Almuerzo con vista al Lago de Coatepeque.",
+                "Recorrido por la Catedral y Teatro de Santa Ana.",
+                "Sitio Arqueológico Tazumal."
             ],
             guias: [
-                { nombre: "Roberto Morán", especialidad: "Senderismo (Volcán Ilamatepec)", telefono: "7900-1212" },
-                { nombre: "Elena Figueroa", especialidad: "Tours Culturales y Lago Coatepeque", telefono: "7745-6789" }
+                { nombre: "Roberto Morán", especialidad: "Volcán Ilamatepec", telefono: "7900-1212" },
+                { nombre: "Elena Figueroa", especialidad: "Cultura Maya", telefono: "7745-6789" }
             ]
         },
         "Sonsonate": {
             actividades: [
-                "Recorrer la Ruta de las Flores (en temporada).",
-                "Visitar pueblos con encanto como Nahuizalco y Salcoatitán.",
-                "Nadar en las playas de Los Cóbanos (Ecoturismo).",
-                "Disfrutar de la gastronomía local en Juayúa."
+                "Senderismo en el Complejo de los Volcanes (Cerro Verde).",
+                "Snorkel en el arrecife de Playa Los Cóbanos.",
+                "Mercado nocturno de Nahuizalco.",
+                "Ruta gastronómica en Salcoatitán."
             ],
             guias: [
-                { nombre: "Patricia Ramos", especialidad: "Ecoturismo Costero", telefono: "7567-8901" }
+                { nombre: "Patricia Ramos", especialidad: "Ecoturismo Costero", telefono: "7567-8901" },
+                { nombre: "Luis García", especialidad: "Ruta de las Flores", telefono: "7123-4567" }
             ]
         },
         "Ahuachapán": {
             actividades: [
-                "Relajarse en los ausoles y aguas termales.",
-                "Hacer la Ruta de las Flores (Ataco, Apaneca).",
-                "Probar el café de altura en una finca local.",
-                "Hacer el laberinto de Apaneca."
+                "Recorrer los murales de Ataco.",
+                "Laguna Verde y Laberinto de Albania en Apaneca.",
+                "Relax en Termales de Santa Teresa.",
+                "Senderismo en Parque Nacional El Imposible."
             ],
             guias: [
-                { nombre: "Sofía Cienfuegos", especialidad: "Ruta de las Flores (Ataco y Apaneca)", telefono: "7622-3344" },
-                { nombre: "David Pineda", especialidad: "Tour de Café y Termalismo", telefono: "7850-9988" }
+                { nombre: "Sofía Cienfuegos", especialidad: "Pueblos Vivos", telefono: "7622-3344" },
+                { nombre: "David Pineda", especialidad: "Café y Montaña", telefono: "7850-9988" }
+            ]
+        },
+        "Chalatenango": {
+            actividades: [
+                "Camping en la cima del Cerro El Pital.",
+                "Visita a talleres artesanales en La Palma.",
+                "Bañarse en las aguas frías del Río Sumpul.",
+                "Ecoturismo en la zona alta."
+            ],
+            guias: [
+                { nombre: "Mario Escobar", especialidad: "Camping y Montaña", telefono: "7001-2233" },
+                { nombre: "Carla Monge", especialidad: "Artesanías y Cultura", telefono: "7445-6677" }
+            ]
+        },
+        "Cuscatlán": {
+            actividades: [
+                "Caminar por las calles empedradas de Suchitoto.",
+                "Tour en lancha en el Lago Suchitlán.",
+                "Visita a la Cascada Los Tercios.",
+                "Mirador del Cerro de las Pavas."
+            ],
+            guias: [
+                { nombre: "Alejandra Ruiz", especialidad: "Historia de Suchitoto", telefono: "7888-9900" },
+                { nombre: "Juan Tobar", especialidad: "Tours del Lago", telefono: "7222-3344" }
+            ]
+        },
+        "La Paz": {
+            actividades: [
+                "Día de playa en la Costa del Sol.",
+                "Paseo en lancha por el Estero de Jaltepeque.",
+                "Comer pupusas de arroz en Olocuilta.",
+                "Visita a la Catedral de Zacatecoluca."
+            ],
+            guias: [
+                { nombre: "Esteban López", especialidad: "Estero y Manglares", telefono: "7666-5544" }
+            ]
+        },
+        "Cabañas": {
+            actividades: [
+                "Comprar artesanías de barro en Ilobasco.",
+                "Senderismo histórico en Bosque de Cinquera.",
+                "Visita a la Iglesia colonial de Ilobasco.",
+                "Conocer la historia local."
+            ],
+            guias: [
+                { nombre: "Rosa Meléndez", especialidad: "Historia y Conflicto", telefono: "7111-2233" }
+            ]
+        },
+        "San Vicente": {
+            actividades: [
+                "Ascenso al Volcán Chichontepec.",
+                "Visita a los telares de San Sebastián.",
+                "Relax en la Laguna de Apastepeque.",
+                "Turicentro Amapulapa."
+            ],
+            guias: [
+                { nombre: "Julio Renderos", especialidad: "Textiles y Cultura", telefono: "7999-0011" },
+                { nombre: "Grupo de Guías", especialidad: "Volcán Chichontepec", telefono: "7333-4455" }
+            ]
+        },
+        "Usulután": {
+            actividades: [
+                "Tour de tortugas en Bahía de Jiquilisco.",
+                "Visita a la Laguna de Alegría (La Esmeralda).",
+                "Caminar por el pueblo de Alegría.",
+                "Playa El Espino."
+            ],
+            guias: [
+                { nombre: "Cooperativa Bahía", especialidad: "Eco-tours Bahía", telefono: "7777-8888" },
+                { nombre: "Alma Cruz", especialidad: "Pueblo de Alegría", telefono: "7555-6666" }
+            ]
+        },
+        "San Miguel": {
+            actividades: [
+                "Surf y relax en Playa El Cuco o Las Flores.",
+                "Senderismo al Volcán Chaparrastique.",
+                "Paseo en la Laguna de Olomega.",
+                "Visita a la Catedral de San Miguel."
+            ],
+            guias: [
+                { nombre: "Jorge Zelaya", especialidad: "Volcán Chaparrastique", telefono: "7000-5050" },
+                { nombre: "Turismo Oriente", especialidad: "Playas y Surf", telefono: "7222-1111" }
+            ]
+        },
+        "Morazán": {
+            actividades: [
+                "Recorrido histórico Museo de la Revolución (Perquín).",
+                "Bañarse en las aguas turquesas del Río Sapo.",
+                "Visita al monumento de El Mozote.",
+                "Camping en zonas altas."
+            ],
+            guias: [
+                { nombre: "Guías de Paz", especialidad: "Historia Militar", telefono: "7888-7777" },
+                { nombre: "Ecoturismo Morazán", especialidad: "Río Sapo y Naturaleza", telefono: "7444-5555" }
             ]
         },
         "La Unión": {
             actividades: [
-                "Tomar un tour en lancha por el Golfo de Fonseca.",
-                "Visitar las islas (Meanguera, Conchagüita, Zacatillo).",
-                "Subir al Volcán de Conchagua para vistas impresionantes.",
-                "Disfrutar de playas vírgenes como Playas Negras."
+                "Tour en lancha por las islas del Golfo de Fonseca.",
+                "Mirador Espíritu de la Montaña (Volcán Conchagua).",
+                "Playas Negras y Las Tunas.",
+                "Visita al muelle de La Unión."
             ],
             guias: [
-                { nombre: "Manuel Chávez", especialidad: "Tours en Lancha (Islas del Golfo)", telefono: "7505-1020" }
+                { nombre: "Manuel Chávez", especialidad: "Islas del Golfo", telefono: "7505-1020" },
+                { nombre: "Camping Conchagua", especialidad: "Miradores y Volcán", telefono: "7999-8888" }
             ]
         }
     };
