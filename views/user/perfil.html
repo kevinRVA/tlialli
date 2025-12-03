@@ -13,26 +13,21 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-custom-nav" data-bs-theme="dark">
         <div class="container-fluid">
-
             <a class="navbar-brand d-flex align-items-center" href="../../index.html">
-                <img src="../../assets/images/tlialli.svg" alt="Logo" width="40" height="40"
-                    class="d-inline-block align-text-top me-2">
+                <img src="../../assets/images/tlialli.svg" alt="Logo" width="60" class="d-inline-block align-text-top me-2">
                 Tlialli Cuscatlán
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarContent">
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../destinos.html">Destinos</a>
+                        <a class="nav-link" href="../destinos.html">Explora los Destinos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../quienessomos.html">¿Quiénes somos?</a>
@@ -41,25 +36,21 @@
                         <a class="nav-link" href="#">Contáctanos</a>
                     </li>
                 </ul>
-
-                <div class="d-flex align-items-center mt-3 mt-lg-0 border-top border-lg-0 pt-3 pt-lg-0">
+                <div class="d-flex align-items-center mt-3 mt-lg-0 pt-3 pt-lg-0">
                     <span class="text-white me-3">
                         Hola, <span id="nav-username" class="fw-bold">Usuario </span>
                     </span>
                     <img src="https://ui-avatars.com/api/?name=Usuario&background=random" alt="Avatar"
                         class="rounded-circle border border-2 border-white" width="40" height="40">
-
                     <a href="../../index.html" class="btn btn-sm btn-outline-danger ms-3" title="Cerrar Sesión"
                         onclick="localStorage.removeItem('usuarioCorreo')">
                         <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
                 </div>
-
             </div>
         </div>
     </nav>
     <div class="container my-5">
-
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card shadow-sm border-0">
@@ -92,9 +83,20 @@
             </div>
         </div>
     </div>
+    <footer class="bg-custom-nav text-white py-4">
+        <div class="container text-center">
+            <div class="social-links mb-3">
+                <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Tlialli Cuscatlán. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/perfil.js"></script>
 </body>
+
 
 </html>

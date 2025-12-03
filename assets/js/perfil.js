@@ -1,48 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // --- PASO 1: RECUPERAR DATOS DEL LOGIN ---
-    // Buscamos si hay un correo guardado en el navegador
     const emailGuardado = localStorage.getItem("usuarioCorreo");
-    
-    // Si hay email, creamos un nombre basado en el correo (lo que está antes del @)
-    // Si no hay email, usamos "Invitado"
     const nombreUsuario = emailGuardado ? emailGuardado.split('@')[0] : "Invitado";
 
     // --- PASO 2: CONFIGURACIÓN DE DATOS DEL USUARIO ---
     const userData = {
-        // Usamos los datos recuperados o valores por defecto
-        nombre: nombreUsuario.charAt(0).toUpperCase() + nombreUsuario.slice(1), // Capitalizar primera letra
+        nombre: nombreUsuario.charAt(0).toUpperCase() + nombreUsuario.slice(1),
         email: emailGuardado || "invitado@tlialli.sv",
-        
-        // Generamos el avatar dinámico usando el nombre recuperado
+        // Avatar dinámico
         avatar: `https://ui-avatars.com/api/?name=${nombreUsuario}&background=0D8ABC&color=fff`,
         
-        // Array de lugares visitados (Datos simulados)
+        // Historial de Viajes
         historialViajes: [
             {
                 destino: "Playa El Tunco",
                 departamento: "La Libertad",
                 fecha: "20 Nov, 2025",
-                imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/El_Tunco_Beach.jpg/640px-El_Tunco_Beach.jpg",
+                imagen: "../../assets/images/tunco.jpg", 
                 rating: 5
             },
             {
                 destino: "Volcán Ilamatepec",
                 departamento: "Santa Ana",
                 fecha: "15 Oct, 2025",
-                imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Volc%C3%A1n_de_Izalco_y_Volc%C3%A1n_de_Santa_Ana.jpg/640px-Volc%C3%A1n_de_Izalco_y_Volc%C3%A1n_de_Santa_Ana.jpg",
+                imagen: "../../assets/images/ilamatepec.jpg",
                 rating: 4
             },
             {
                 destino: "Ruta de las Flores",
                 departamento: "Ahuachapán",
                 fecha: "02 Sep, 2025",
-                imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Iglesia_de_Apaneca.jpg/640px-Iglesia_de_Apaneca.jpg",
+                imagen: "../../assets/images/apaneca.webp",
                 rating: 5
             }
         ],
 
-        // Array de contactos (Datos simulados)
+        // Contactos
         contactosRecientes: [
             {
                 nombre: "Miguel Hernández",
@@ -65,14 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ]
     };
 
-    // --- PASO 3: FUNCIONES DE RENDERIZADO (Igual que antes) ---
+    // --- PASO 3: FUNCIONES DE RENDERIZADO ---
 
     function loadHeader() {
-        // Actualizamos el Navbar
         const navUserElement = document.getElementById("nav-username");
         if(navUserElement) navUserElement.textContent = userData.nombre;
 
-        // Actualizamos la Tarjeta de Perfil
         const profileName = document.getElementById("profile-name");
         const profileEmail = document.getElementById("profile-email");
         const profileAvatar = document.getElementById("profile-avatar");
@@ -84,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadHistory() {
         const container = document.getElementById("places-container");
-        if (!container) return; // Validación por seguridad
+        if (!container) return; 
         
         if(userData.historialViajes.length === 0) {
             container.innerHTML = '<p class="text-muted">Aún no has visitado ningún lugar.</p>';
@@ -97,13 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 estrellas += i < viaje.rating ? '<i class="fa-solid fa-star text-warning"></i>' : '<i class="fa-regular fa-star text-warning"></i>';
             }
 
+            // AQUI ESTA LA MAGIA DEL DISEÑO REDONDO
             const cardHTML = `
                 <div class="col-12">
                     <div class="card shadow-sm h-100">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="${viaje.imagen}" class="img-fluid rounded-start h-100 object-fit-cover" alt="${viaje.destino}" style="min-height: 150px;">
+                        <div class="row g-0 align-items-center">
+                            
+                            <div class="col-md-4 d-flex justify-content-center p-3">
+                                <img src="${viaje.imagen}" 
+                                     class="rounded-circle object-fit-cover shadow-sm" 
+                                     alt="${viaje.destino}" 
+                                     width="150" height="150">
                             </div>
+                            
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
@@ -125,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadContacts() {
         const container = document.getElementById("contacts-container");
-        if (!container) return; // Validación
+        if (!container) return;
 
         userData.contactosRecientes.forEach(contacto => {
             let badgeClass = "bg-secondary";
@@ -149,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Ejecutar funciones
     loadHeader();
     loadHistory();
     loadContacts();
